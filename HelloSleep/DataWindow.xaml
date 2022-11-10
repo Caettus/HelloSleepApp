@@ -1,0 +1,31 @@
+﻿<Window x:Class="HelloSleep.DataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloSleep"
+        mc:Ignorable="d"
+        Title="DataWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Button x:Name="downloadAllesBtn" Width="100" HorizontalAlignment="Right" Click="downloadAllesBtn_Click">Download</Button>
+            <DataGrid x:Name="DgGebruikers" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="False" Width="*" Header="Id" Binding="{Binding Id}"/>
+                    <DataGridTextColumn IsReadOnly="False" Width="*" Header="Datum" Binding="{Binding Datum}"/>
+                    <DataGridTextColumn IsReadOnly="False" Width="*" Header="Temperatuur" Binding="{Binding Temperatuur}"/>
+                    <DataGridTextColumn IsReadOnly="False" Width="*" Header="Hartslag" Binding="{Binding Hartslag}"/>
+                    <DataGridTextColumn IsReadOnly="False" Width="*" Header="Slapen" Binding="{Binding Slapen}"/>
+                    <DataGridTextColumn IsReadOnly="False" Width="*" Header="Wakker" Binding="{Binding Wakker}"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="downloadDataBtn" Click="downloadDataBtn_Click">Download</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
