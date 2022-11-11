@@ -7,9 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            <Button Name="LiveFeedBtn" Click="LiveFeedBtn_Click">Live feed</Button>
-            <Button Name="DataBtn" Click="DataBtn_Click">Data weergeven</Button>
+
+
+        <StackPanel Background="#FFF3F7FE" OpacityMask="#FFF3F7FE" Margin="6,0,-6,0">
+            <Image x:Name="Logo" Height="100" Width="259" Source="/HelloSleep_Logo.jpeg" RenderTransformOrigin="0.295,-2.325"/>
+            <Button x:Name="LiveFeedBtn" Click="LiveFeedBtn_Click" Height="144" Width="288" Content="Live feed" RenderTransformOrigin="0.5,0.5" Foreground="#FF96C0FB" Background="#FFE7F0FF" FontWeight="Bold" HorizontalAlignment="Left">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.02"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="DataBtn" Click="DataBtn_Click" Height="144" Width="288" Content="Data weergeven" Foreground="#FF96C0FB" Background="#FFE7F0FF" FontWeight="Bold" HorizontalAlignment="Right"/>
+
         </StackPanel>
     </Grid>
 </Window>

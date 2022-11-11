@@ -93,7 +93,7 @@ namespace HelloSleep.DocumentDownloads
 
             Random rnd = new Random();
 
-            string fileNaam = @"C:\\Users\\Thijn\\Documents\\GebruikerInfo_" + rnd.Next(1, 1000000000) + ".xlsx";
+            string fileNaam = @"C:\" + rnd.Next(1, 1000000000) + ".xlsx";
 
             FileInfo excelFile = new FileInfo(fileNaam);
 

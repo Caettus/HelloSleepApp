@@ -30,6 +30,8 @@ namespace HelloSleep
             InitializeComponent();
 
             GetDBdata.GetData(dataList);
+
+            
         }
 
         private void DataBtn_Click(object sender, RoutedEventArgs e)
