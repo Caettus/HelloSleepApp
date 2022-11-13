@@ -5,24 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloSleep"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="640" Width="615"
+        Background="#F3F7FE">
 
 
-        <StackPanel Background="#FFF3F7FE" OpacityMask="#FFF3F7FE" Margin="6,0,-6,0">
-            <Image x:Name="Logo" Height="100" Width="259" Source="/HelloSleep_Logo.jpeg" RenderTransformOrigin="0.295,-2.325"/>
-            <Button x:Name="LiveFeedBtn" Click="LiveFeedBtn_Click" Height="144" Width="288" Content="Live feed" RenderTransformOrigin="0.5,0.5" Foreground="#FF96C0FB" Background="#FFE7F0FF" FontWeight="Bold" HorizontalAlignment="Left">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.02"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
-            <Button x:Name="DataBtn" Click="DataBtn_Click" Height="144" Width="288" Content="Data weergeven" Foreground="#FF96C0FB" Background="#FFE7F0FF" FontWeight="Bold" HorizontalAlignment="Right"/>
+    <Grid Margin="0,0,0,-1">
 
-        </StackPanel>
+
+
+        <Image x:Name="Logo" Width="259" Source="/HelloSleep_Logo.jpeg" RenderTransformOrigin="0.295,-2.325" Margin="96,-70,95,418"/>
+        <Button x:Name="LiveFeedBtn" 
+                Click="LiveFeedBtn_Click" 
+                Width="180" Height="111"
+                Content="Live feed" 
+                RenderTransformOrigin="0.5,0.5" 
+                Foreground="#FF96C0FB" Background="#FFE7F0FF" 
+                FontWeight="Bold" 
+                HorizontalAlignment="Left" Margin="25,175,0,339" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Button.Effect>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.02"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button 
+            x:Name="DataBtn" 
+            Click="DataBtn_Click" 
+            Width="180" 
+            Content="Data weergeven" 
+            Foreground="#FF96C0FB" Background="#FFE7F0FF" 
+            FontWeight="Bold" 
+            HorizontalAlignment="Right" Margin="0,178,30,336" 
+            BorderThickness="1,1,1,1" Height="111">
+
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Button.Effect>
+
+        </Button>
+
     </Grid>
 </Window>
