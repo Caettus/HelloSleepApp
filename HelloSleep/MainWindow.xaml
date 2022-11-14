@@ -5,72 +5,94 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloSleep"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="615"
-        Background="#F3F7FE">
+        Title="MainWindow" Height="870" Width="762"
+        Background="#F3F7FE"
+        Margin="-39,0,0,-96">
 
 
-    <Grid Margin="0,0,0,-1">
+    <Grid Margin="-39,0,39,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="87*"/>
+        </Grid.RowDefinitions>
 
 
 
-        <Image x:Name="Logo" Width="259" Source="/HelloSleep_Logo.jpeg" RenderTransformOrigin="0.295,-2.325" Margin="96,-70,95,418"/>
-        <Button x:Name="LiveFeedBtn" 
+
+        <StackPanel Margin="0,10,0,317" Grid.ColumnSpan="2" Orientation="Vertical" >
+            <Image 
+                x:Name="Logo" 
+                Source="/HelloSleep_Logo.jpeg" 
+                RenderTransformOrigin="0.295,-2.325" 
+                Height="101" Width="310"
+                />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10" Grid.ColumnSpan="2">
+            <Button x:Name="LiveFeedBtn" 
                 Click="LiveFeedBtn_Click" 
-                Width="180" Height="111"
+                Width="195" Height="111"
                 Content="Live feed" 
-                RenderTransformOrigin="0.5,0.5" 
+                RenderTransformOrigin="0.295,0.541" 
                 Foreground="#FF96C0FB" Background="#FFE7F0FF" 
                 FontWeight="Bold" 
-                HorizontalAlignment="Left" Margin="25,175,0,339" >
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-            <Button.Effect>
-                <DropShadowEffect
+                HorizontalAlignment="Left" Margin="75,50,10,45" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect>
+                    <DropShadowEffect
                     ShadowDepth="4"
                     Direction="330"
                     Color="Black"
                     Opacity="0.5"
                     BlurRadius="4"/>
-            </Button.Effect>
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.02"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button 
+                </Button.Effect>
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.02"/>
+                        <TranslateTransform X="0.003" Y="0.016"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button 
             x:Name="DataBtn" 
             Click="DataBtn_Click" 
             Width="180" 
             Content="Data weergeven" 
             Foreground="#FF96C0FB" Background="#FFE7F0FF" 
             FontWeight="Bold" 
-            HorizontalAlignment="Right" Margin="0,178,30,336" 
+            HorizontalAlignment="Right" Margin="300,50,10,45" 
             BorderThickness="1,1,1,1" Height="111">
 
 
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
 
-            <Button.Effect>
-                <DropShadowEffect
+                <Button.Effect>
+                    <DropShadowEffect
                     ShadowDepth="4"
                     Direction="330"
                     Color="Black"
                     Opacity="0.5"
                     BlurRadius="4"/>
-            </Button.Effect>
+                </Button.Effect>
 
-        </Button>
+            </Button>
+
+        </StackPanel>
+
+
 
     </Grid>
 </Window>
