@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Theme\**" />
+    <EmbeddedResource Remove="Theme\**" />
+    <None Remove="Theme\**" />
+    <Page Remove="Theme\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="HelloSleep_Logo.jpeg" />
   </ItemGroup>
 
@@ -18,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Theme\" />
   </ItemGroup>
 
   <ItemGroup>

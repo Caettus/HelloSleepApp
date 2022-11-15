@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using HelloSleep.DB;
 using HelloSleep.Models;
 
 namespace HelloSleep
@@ -31,7 +32,9 @@ namespace HelloSleep
             InitializeComponent();
 
             DataList = dataList;
-          
+
+            
+
             AddItemsList();
             FillTextBoxes();
            
@@ -73,5 +76,11 @@ namespace HelloSleep
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
+       private void DataBtn_Click(object sender, RoutedEventArgs e)
+       {
+            DataWindow windowData = new(DataList);
+
+            windowData.Show();
+       }
     }
 }
