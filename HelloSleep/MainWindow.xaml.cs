@@ -47,5 +47,10 @@ namespace HelloSleep
 
             windowLive.Show();
         }
+
+        private void WekkerBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
