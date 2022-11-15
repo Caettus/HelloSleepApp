@@ -50,7 +50,13 @@ namespace HelloSleep
 
         private void WekkerBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            UnderConstructionPage underConstructionPage = new UnderConstructionPage();
+            underConstructionPage.Show();
+        }
+        private void LogoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

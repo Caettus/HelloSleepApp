@@ -12,14 +12,14 @@
 
     <Grid >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="60"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="60"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="120"/>
             <RowDefinition/>
             <RowDefinition/>
@@ -30,22 +30,35 @@
 
 
 
+        <Button
+                x:Name="LogoBtn"  
+                 Background="#F3F7FE"
+                Height="101" Width="310" 
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Grid.Row="1"
+                VerticalAlignment="Top">
+            <Image Source="/HelloSleep_Logo.jpeg" Stretch="UniformToFill">
+            </Image>
+        </Button>
 
-
+       <!--
         <Image 
                 x:Name="Logo" 
                 Source="/HelloSleep_Logo.jpeg" 
                 RenderTransformOrigin="0.295,-2.325" 
                 Height="101" Width="310" 
-            Grid.Column="1"
-               Grid.ColumnSpan="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
                 Grid.Row="1"
+                VerticalAlignment="Top"
                 />
+        --> 
 
         <Button x:Name="LiveFeedBtn" 
                 Click="LiveFeedBtn_Click" 
                 Width="195" Height="111"
-                Content="Live feed" 
+                Content="Resultaten" 
                 RenderTransformOrigin="0.295,0.541" 
                 Foreground="#FF96C0FB" Background="#FFE7F0FF" 
                 FontWeight="Bold" 

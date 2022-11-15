@@ -5,29 +5,102 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloSleep"
         mc:Ignorable="d"
-        Title="LiveFeedWindow" Height="450" Width="800">
+        Title="LiveFeedWindow" Height="870" Width="762"
+        Background="#F3F7FE">
     <Grid>
-        <StackPanel>
-            <DockPanel>
-                <TextBlock Text="Baby werd om "/>
-                <TextBlock x:Name="wakkerTb" Text=""/>
-            </DockPanel>
-            <DockPanel>
-                <TextBlock Text="Baby ging om "/>
-                <TextBlock x:Name="slapenTb" Text=""/>
-            </DockPanel>
-            <DockPanel>
-                <TextBlock Text="Baby had om "/>
-                <TextBlock x:Name="TijdLaagTb"/>
-                <TextBlock Text=" de laagste temperatuur van "/>
-                <TextBlock x:Name="laagsteTempTb" Text=""/>
-            </DockPanel>
-            <DockPanel>
-                <TextBlock Text="Baby had om "/>
-                <TextBlock x:Name="TijdHoogTb"/>
-                <TextBlock Text=" de hoogste temperatuur van "/>
-                <TextBlock x:Name="hoogsteTempTb"/>
-            </DockPanel>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <!-- <Border BorderBrush="#FF96C0FB" Background="#e7f0ff" BorderThickness="1" CornerRadius="10" Grid.Column="1" Grid.Row="3" Grid.RowSpan="4" /> -->
+        <Rectangle x:Name="BackgroundRec" Fill="#e7f0ff" Grid.Column="1" Grid.Row="3" Grid.RowSpan="4" RadiusX="10" RadiusY="10" Stroke="#99b7e8" StrokeThickness="1.5">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+
+        <Button 
+            x:Name="DataBtn" 
+            Click="DataBtn_Click" 
+            Width="180" 
+            Content="Data weergeven" 
+            Foreground="#FF96C0FB" Background="#FFE7F0FF" 
+            FontWeight="Bold" 
+            HorizontalAlignment="Right" 
+            BorderThickness="1,1,1,1" Height="111" 
+            Grid.Column="1"
+            Grid.Row="2" FontSize="22">
+
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Button.Effect>
+
+        </Button>
+        <Button
+                x:Name="LogoBtn"  
+                Background="#F3F7FE"
+                Height="101" Width="310" 
+                Grid.Column="1"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center" >
+                
+            <Image Source="/HelloSleep_Logo.jpeg" Stretch="UniformToFill">
+            </Image>
+        </Button>
+        <DockPanel Grid.Row="3" Grid.Column="1" >
+            <TextBlock Text="Baby werd om " Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock x:Name="wakkerTb" Text="" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+        </DockPanel>
+
+        <DockPanel Grid.Column="1" Grid.Row="4">
+            <TextBlock Text="Baby ging om "  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock x:Name="slapenTb" Text=""  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+        </DockPanel>
+
+        <DockPanel Grid.Column="1" Grid.Row="5">
+            <TextBlock Text="Baby had om " Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock x:Name="TijdLaagTb"  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock Text=" de laagste temperatuur van "  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock x:Name="laagsteTempTb" Text="" Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+        </DockPanel>
+
+        <DockPanel Grid.Column="1" Grid.Row="6">
+            <TextBlock Text="Baby had om " Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock x:Name="TijdHoogTb" Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock Text=" de hoogste temperatuur van " Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock x:Name="hoogsteTempTb" Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+        </DockPanel>
+
     </Grid>
 </Window>
