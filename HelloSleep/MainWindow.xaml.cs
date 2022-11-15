@@ -58,5 +58,11 @@ namespace HelloSleep
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
+
+        private void MuziekBtn_Click(object sender, RoutedEventArgs e)
+        {
+            UnderConstructionPage underConstructionPage = new UnderConstructionPage();
+            underConstructionPage.Show();
+        }
     }
 }

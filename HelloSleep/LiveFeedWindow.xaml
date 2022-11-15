@@ -15,6 +15,9 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="102"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -25,7 +28,7 @@
         </Grid.RowDefinitions>
 
         <!-- <Border BorderBrush="#FF96C0FB" Background="#e7f0ff" BorderThickness="1" CornerRadius="10" Grid.Column="1" Grid.Row="3" Grid.RowSpan="4" /> -->
-        <Rectangle x:Name="BackgroundRec" Fill="#e7f0ff" Grid.Column="1" Grid.Row="3" Grid.RowSpan="4" RadiusX="10" RadiusY="10" Stroke="#99b7e8" StrokeThickness="1.5">
+        <Rectangle x:Name="BackgroundRec" Fill="#e7f0ff" Grid.Column="1" Grid.Row="4" Grid.RowSpan="6" RadiusX="10" RadiusY="10" Stroke="#99b7e8" StrokeThickness="1.5">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="4"
@@ -78,29 +81,31 @@
             <Image Source="/HelloSleep_Logo.jpeg" Stretch="UniformToFill">
             </Image>
         </Button>
-        <DockPanel Grid.Row="3" Grid.Column="1" >
+        <DockPanel Grid.Row="4" Grid.Column="1" >
             <TextBlock Text="Baby werd om " Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
             <TextBlock x:Name="wakkerTb" Text="" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
         </DockPanel>
 
-        <DockPanel Grid.Column="1" Grid.Row="4">
+        <DockPanel Grid.Column="1" Grid.Row="5">
             <TextBlock Text="Baby ging om "  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
             <TextBlock x:Name="slapenTb" Text=""  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
         </DockPanel>
 
-        <DockPanel Grid.Column="1" Grid.Row="5">
-            <TextBlock Text="Baby had om " Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
-            <TextBlock x:Name="TijdLaagTb"  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
-            <TextBlock Text=" de laagste temperatuur van "  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
-            <TextBlock x:Name="laagsteTempTb" Text="" Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
-        </DockPanel>
-
         <DockPanel Grid.Column="1" Grid.Row="6">
             <TextBlock Text="Baby had om " Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
-            <TextBlock x:Name="TijdHoogTb" Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
-            <TextBlock Text=" de hoogste temperatuur van " Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
-            <TextBlock x:Name="hoogsteTempTb" Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock x:Name="TijdLaagTb"  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock Text=" de laagste temperatuur van: "  Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            
         </DockPanel>
+        <TextBlock x:Name="laagsteTempTb" Text="" Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22" Grid.Row="7"/>
+
+        <DockPanel Grid.Column="1" Grid.Row="8">
+            <TextBlock Text="Baby had om " Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock x:Name="TijdHoogTb" Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            <TextBlock Text=" de hoogste temperatuur van: " Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"/>
+            
+        </DockPanel>
+        <TextBlock x:Name="hoogsteTempTb" Grid.Column="1" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22" Grid.Row="9"/>
 
     </Grid>
 </Window>

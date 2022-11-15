@@ -142,5 +142,31 @@
             </Button.Effect>
 
         </Button>
+
+        <Button x:Name="MuziekBtn" Click="MuziekBtn_Click"  Width="180" 
+            Content="Muziek" 
+            Foreground="#FF96C0FB" Background="#FFE7F0FF" 
+            FontWeight="Bold" 
+            HorizontalAlignment="Center" 
+            BorderThickness="1,1,1,1" Height="111" 
+            Grid.Column="3"
+            Grid.Row="5" FontSize="22">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Button.Effect>
+
+        </Button>
     </Grid>
 </Window>
