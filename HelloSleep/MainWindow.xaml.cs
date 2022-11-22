@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using HelloSleep.DB;
 using HelloSleep.Models;
 using HelloSleep.DocumentDownloads;
+using HelloSleep.ArdConnectie;
 
 namespace HelloSleep
 {
@@ -29,9 +30,7 @@ namespace HelloSleep
         {
             InitializeComponent();
 
-            GetDBdata.GetData(dataList);
-
-            
+            GetDBdata.GetData(dataList);           
         }
 
         private void DataBtn_Click(object sender, RoutedEventArgs e)
@@ -61,6 +60,10 @@ namespace HelloSleep
 
         private void MuziekBtn_Click(object sender, RoutedEventArgs e)
         {
+
+            LiveData live = new();
+            MainCon.SendCommand(live , "BUZZ");
+
             UnderConstructionPage underConstructionPage = new UnderConstructionPage();
             underConstructionPage.Show();
         }

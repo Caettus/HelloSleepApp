@@ -9,10 +9,12 @@ namespace HelloSleep.Models
     public class Data
     {
         public int Id { get; set; }
-        public string? Datum { get; set; }
-        public string? Temperatuur { get; set; }
-        public string? Hartslag { get; set; }
-        public string? Slapen { get; set; }
-        public string? Wakker { get; set; }                  
+        public string? Datum { get; set; } = "";
+        public string? Temperatuur { get; set; } = "";
+        public string? Hartslag { get; set; } = "";
+        public string? Slapen { get; set; } = "";
+        public string? Wakker { get; set; } = "";
+        public string? AvgTemp { get; set; } = "";
+        
     }
 }

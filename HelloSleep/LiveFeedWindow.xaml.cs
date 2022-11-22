@@ -12,8 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using HelloSleep.ArdConnectie;
 using HelloSleep.DB;
 using HelloSleep.Models;
+using System.Windows.Navigation;
+using System.Threading;
+using Google.Protobuf.WellKnownTypes;
 
 namespace HelloSleep
 {
@@ -22,28 +26,68 @@ namespace HelloSleep
     /// </summary>
     public partial class LiveFeedWindow : Window
     {
+        LiveData liveData = new();
+
         List<Data> DataList;
 
-        List<string> TempList = new List<string>();
-        List<string> WakkerList = new List<string>();
-        List<string> SlapenList = new List<string>();
+        List<double> LiveTempList = new();
+        List<string> TempList = new();
+        List<string> WakkerList = new();
+        List<string> SlapenList = new();
+
         public LiveFeedWindow(List<Data> dataList)
         {
             InitializeComponent();
 
             DataList = dataList;
 
-            
+            UpdateData();
+            SendDataDb();
+        }
 
-            AddItemsList();
-            FillTextBoxes();
-           
+        public async void UpdateData()
+        {
+            var timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+
+            while (await timer.WaitForNextTickAsync())
+            {
+                MainCon.SendCommand(liveData, "TEMP_LEZEN");
+                DataList.Clear();
+                GetDBdata.GetData(DataList);
+                AddItemsList();
+                FillTextBoxes();
+                if (LiveTempList.Count > 0)
+                {
+                    liveData.AvgTemp = Math.Round(LiveTempList.Average(), 2).ToString();
+                }
+            }
+        }
+
+        public async void SendDataDb()
+        {
+            var timer = new PeriodicTimer(TimeSpan.FromSeconds(20));
+
+            while (await timer.WaitForNextTickAsync())
+            {
+                if (liveData.CurrentTemp == "")
+                {
+                    DataToDb.StuurData(liveData.AvgTemp, LiveTempList.Last().ToString());
+                }
+                else
+                {
+                    DataToDb.StuurData(liveData.AvgTemp, liveData.CurrentTemp);
+                }
+            }
         }
 
         private void AddItemsList()
         {
             foreach (Data item in DataList)
             {
+                if (liveData.CurrentTemp != "")
+                {
+                    LiveTempList.Add(double.Parse(liveData.CurrentTemp));
+                }
                 TempList.Add(item.Temperatuur);
                 WakkerList.Add(item.Wakker);
                 SlapenList.Add(item.Slapen);
@@ -69,6 +113,8 @@ namespace HelloSleep
                     TijdHoogTb.Text = item.Datum;
                 }
                 hoogsteTempTb.Text = TempList.AsQueryable().Max() + " graden";
+
+                currentTempTb.Text = "Baby heeft nu een temperatuur van " +  liveData.CurrentTemp + "\nGemiddeld temperatuur: " + liveData.AvgTemp;
             }
         }
         private void LogoBtn_Click(object sender, RoutedEventArgs e)
@@ -82,5 +128,16 @@ namespace HelloSleep
 
             windowData.Show();
        }
+        private void RefreshPagina()
+        {
+            LiveFeedWindow liveFeedWindow = new(DataList);
+            liveFeedWindow.Show();
+            this.Close();
+        }
+
+        private void RefreshBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshPagina();
+        }
     }
 }

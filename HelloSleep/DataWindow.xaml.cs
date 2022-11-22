@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HelloSleep.Models;
+using HelloSleep.ArdConnectie;
+using System.Threading;
 
 namespace HelloSleep
 {
@@ -26,10 +28,12 @@ namespace HelloSleep
         public DataWindow(List<Data> dataList)
         {
             InitializeComponent();
-
             DataList = dataList;
 
-            DgGebruikers.ItemsSource = dataList;
+            DgGebruikers.ItemsSource = null;
+            DgGebruikers.ItemsSource = DataList;
+
+            RefreshGrid();
         }
         private void downloadDataBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -38,7 +42,20 @@ namespace HelloSleep
 
             DownloadExcel.Download(DataList, id);
         }
+        private async void RefreshGrid()
+        {
+            var timer = new PeriodicTimer(TimeSpan.FromSeconds(20));
 
+            while (await timer.WaitForNextTickAsync())
+            {
+                DataList.Clear();
+
+                GetDBdata.GetData(DataList);
+
+                DgGebruikers.ItemsSource = null;
+                DgGebruikers.ItemsSource = DataList;
+            }
+        }
         private void downloadAllesBtn_Click(object sender, RoutedEventArgs e)
         {
             string id = null;
