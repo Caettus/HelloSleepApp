@@ -36,11 +36,10 @@ namespace HelloSleep.DocumentDownloads
 
             workSheet.Cells[1, 1].Value = "Id";
             workSheet.Cells[1, 2].Value = "Datum";
-            workSheet.Cells[1, 3].Value = "Avg temp";
-            workSheet.Cells[1, 4].Value = "Temperatuur";
-            workSheet.Cells[1, 5].Value = "Hartslag";
-            workSheet.Cells[1, 6].Value = "Slapen";
-            workSheet.Cells[1, 7].Value = "Wakker";
+            workSheet.Cells[1, 3].Value = "Temperatuur";
+            workSheet.Cells[1, 4].Value = "Hartslag";
+            workSheet.Cells[1, 5].Value = "Slapen";
+            workSheet.Cells[1, 6].Value = "Wakker";
 
             workSheet.Cells[1, 1].Style.Font.Bold = true;
             workSheet.Cells[1, 2].Style.Font.Bold = true;
@@ -48,7 +47,6 @@ namespace HelloSleep.DocumentDownloads
             workSheet.Cells[1, 4].Style.Font.Bold = true;
             workSheet.Cells[1, 5].Style.Font.Bold = true;
             workSheet.Cells[1, 6].Style.Font.Bold = true;
-            workSheet.Cells[1, 7].Style.Font.Bold = true;
 
             workSheet.Cells[1, 1, 1, 7].Style.Border.Bottom.Style = ExcelBorderStyle.Hair;
 
@@ -64,11 +62,10 @@ namespace HelloSleep.DocumentDownloads
 
                         workSheet.Cells[recordIndex, 1].Value = item.Id;
                         workSheet.Cells[recordIndex, 2].Value = item.Datum;
-                        workSheet.Cells[recordIndex, 3].Value = item.AvgTemp;
-                        workSheet.Cells[recordIndex, 4].Value = item.Temperatuur;
-                        workSheet.Cells[recordIndex, 5].Value = item.Hartslag;
-                        workSheet.Cells[recordIndex, 6].Value = item.Slapen;
-                        workSheet.Cells[recordIndex, 7].Value = item.Wakker;
+                        workSheet.Cells[recordIndex, 3].Value = item.Temperatuur;
+                        workSheet.Cells[recordIndex, 4].Value = item.Hartslag;
+                        workSheet.Cells[recordIndex, 5].Value = item.Slapen;
+                        workSheet.Cells[recordIndex, 6].Value = item.Wakker;
 
 
                         recordIndex++;
@@ -80,11 +77,10 @@ namespace HelloSleep.DocumentDownloads
 
                     workSheet.Cells[recordIndex, 1].Value = item.Id;
                     workSheet.Cells[recordIndex, 2].Value = item.Datum;
-                    workSheet.Cells[recordIndex, 3].Value = item.AvgTemp;
-                    workSheet.Cells[recordIndex, 4].Value = item.Temperatuur;
-                    workSheet.Cells[recordIndex, 5].Value = item.Hartslag;
-                    workSheet.Cells[recordIndex, 6].Value = item.Slapen;
-                    workSheet.Cells[recordIndex, 7].Value = item.Wakker;
+                    workSheet.Cells[recordIndex, 3].Value = item.Temperatuur;
+                    workSheet.Cells[recordIndex, 4].Value = item.Hartslag;
+                    workSheet.Cells[recordIndex, 5].Value = item.Slapen;
+                    workSheet.Cells[recordIndex, 6].Value = item.Wakker;
 
 
                     recordIndex++;
@@ -97,7 +93,7 @@ namespace HelloSleep.DocumentDownloads
 
             Random rnd = new Random();
 
-            string fileNaam = @"E:\Fontys_ICT\Media\" + rnd.Next(1, 1000000000) + ".xlsx";
+            string fileNaam = @"C:\" + rnd.Next(1, 1000000000) + ".xlsx";
 
             FileInfo excelFile = new FileInfo(fileNaam);
 

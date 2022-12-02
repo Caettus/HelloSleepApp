@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloSleep"
         mc:Ignorable="d"
-        Title="MainWindow" Height="690" Width="762"
-        ResizeMode="NoResize"
+        Title="MainWindow" Height="870" Width="762"
         Background="#F3F7FE"
         >
 

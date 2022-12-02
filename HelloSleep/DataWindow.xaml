@@ -10,11 +10,10 @@
     <Grid>
         <StackPanel>
             <Button x:Name="downloadAllesBtn" Width="100" HorizontalAlignment="Right" Click="downloadAllesBtn_Click">Download</Button>
-            <DataGrid x:Name="DgGebruikers" IsReadOnly="True" MaxHeight="390" AutoGenerateColumns="False">
+            <DataGrid x:Name="DgGebruikers" IsReadOnly="True" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn IsReadOnly="False" Width="*" Header="Id" Binding="{Binding Id}"/>
                     <DataGridTextColumn IsReadOnly="False" Width="*" Header="Datum" Binding="{Binding Datum}"/>
-                    <DataGridTextColumn IsReadOnly="False" Width="*" Header="Avg temp" Binding="{Binding AvgTemp}"/>
                     <DataGridTextColumn IsReadOnly="False" Width="*" Header="Temperatuur" Binding="{Binding Temperatuur}"/>
                     <DataGridTextColumn IsReadOnly="False" Width="*" Header="Hartslag" Binding="{Binding Hartslag}"/>
                     <DataGridTextColumn IsReadOnly="False" Width="*" Header="Slapen" Binding="{Binding Slapen}"/>

@@ -24,10 +24,8 @@ namespace HelloSleep.DB
             while (read.Read())
             {
                 Data dataClass = new();
-
                 dataClass.Id = (int)read["id"];
-                dataClass.Datum = read["datum"].ToString();
-                dataClass.AvgTemp = (string)read["avgtemp"];
+                dataClass.Datum = (string)read["datum"];
                 dataClass.Temperatuur = (string)read["temp"];
                 dataClass.Hartslag = (string)read["hartslag"];
                 dataClass.Slapen = (string)read["slaaptijd"];
