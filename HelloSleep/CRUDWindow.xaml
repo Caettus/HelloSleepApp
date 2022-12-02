@@ -1,0 +1,94 @@
+﻿<Window x:Class="HelloSleep.CRUDWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloSleep"
+        mc:Ignorable="d"
+        Title="CRUDWindow" Height="870" Width="762"
+        Background="#F3F7FE">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3">
+            
+            
+        </DataGrid>
+
+        <Button x:Name="UserDataBn" 
+                Click="UserDataBn_Click" 
+                Width="250" Height="90"
+                Content="Load User Data" 
+                RenderTransformOrigin="0.295,0.541" 
+                Foreground="#FF96C0FB" Background="#FFE7F0FF" 
+                FontWeight="Bold" 
+                HorizontalAlignment="Center" 
+                Grid.Column="1"
+                Grid.Row="0" FontSize="22">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Button.Effect>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.02"/>
+                    <TranslateTransform X="0.003" Y="0.016"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
+        <Button x:Name="BabyDataBtn" 
+                Click="BabyDataBtn_Click" 
+                Width="250" Height="90"
+                Content="Load Baby Data" 
+                RenderTransformOrigin="0.295,0.541" 
+                Foreground="#FF96C0FB" Background="#FFE7F0FF" 
+                FontWeight="Bold" 
+                HorizontalAlignment="Center" 
+                Grid.Column="0"
+                Grid.Row="0" FontSize="22">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Button.Effect>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.02"/>
+                    <TranslateTransform X="0.003" Y="0.016"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
+    </Grid>
+</Window>
