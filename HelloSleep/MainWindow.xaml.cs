@@ -64,5 +64,17 @@ namespace HelloSleep
             UnderConstructionPage underConstructionPage = new UnderConstructionPage();
             underConstructionPage.Show();
         }
+
+        private void CrudBTN_Click(object sender, RoutedEventArgs e)
+        {
+            CRUDWindow CRUDWindow = new CRUDWindow();
+            CRUDWindow.Show();
+        }
+
+        private void AccountBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AccountWindow AccountWindow = new AccountWindow();
+            AccountWindow.Show();
+        }
     }
 }

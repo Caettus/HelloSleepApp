@@ -16,7 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="102"/>
-            <RowDefinition Height="110"/>
+            <RowDefinition Height="120"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -76,9 +76,10 @@
                 Grid.Column="1"
                 Grid.Row="1"
                 VerticalAlignment="Top"
-                HorizontalAlignment="Center" >
+                HorizontalAlignment="Center" 
+                BorderThickness="0">
                 
-            <Image Source="/HelloSleep_Logo.jpeg" Stretch="UniformToFill">
+            <Image Source="Images/logoHelloSleep.png" Stretch="UniformToFill">
             </Image>
         </Button>
         <DockPanel Grid.Row="4" Grid.Column="1" >

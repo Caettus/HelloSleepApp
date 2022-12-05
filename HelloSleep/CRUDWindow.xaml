@@ -19,10 +19,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3">
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3" x:Name="BabyDataGrid">
             
             
         </DataGrid>
+
+        <TextBox x:Name="TextBoxCRUD"></TextBox>
 
         <Button x:Name="UserDataBn" 
                 Click="UserDataBn_Click" 

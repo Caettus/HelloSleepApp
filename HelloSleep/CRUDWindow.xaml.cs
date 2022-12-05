@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HelloSleep.Models;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +33,29 @@ namespace HelloSleep
 
         private void BabyDataBtn_Click(object sender, RoutedEventArgs e)
         {
+            
+                string dbstring = "Server=127.0.0.1;Database=hellosleep;Uid=root;Pwd=;";
+
+                MySqlConnection db = new MySqlConnection(dbstring);
+                db.Open();
+                MySqlCommand com = new MySqlCommand("SELECT * from data", db);
+                com.ExecuteNonQuery();
+
+                MySqlDataReader read = com.ExecuteReader();
+                while (read.Read())
+                {
+                    //(int)read["id"];
+                    //(string)read["datum"];
+                    //(string)read["temp"];
+                    //(string)read["hartslag"];
+                    //(string)read["slaaptijd"];
+                    //(string)read["wakkertijd"];
+
+                    TextBoxCRUD.Text = (string)read["temp"];
+                    BabyDataGrid = read;
+            }
+                db.Close();
+            
 
         }
     }
