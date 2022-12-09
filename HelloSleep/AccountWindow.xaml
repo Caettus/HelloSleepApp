@@ -25,6 +25,21 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
+        <Button
+                x:Name="LogoBtn"  
+                Background="#F3F7FE"
+                Height="101" Width="310" 
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Grid.Row="1"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center" 
+                BorderThickness="0">
+
+            <Image Source="Images/logoHelloSleep.png" Stretch="UniformToFill">
+            </Image>
+        </Button>
+
         <Rectangle x:Name="BackgroundRec" Fill="#e7f0ff" Grid.Column="1" Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="3"  RadiusX="10" RadiusY="10" Stroke="#99b7e8" StrokeThickness="1.5">
             <Rectangle.Effect>
                 <DropShadowEffect
@@ -35,6 +50,28 @@
                     BlurRadius="4"/>
             </Rectangle.Effect>
         </Rectangle>
+
+        <Button Grid.Row="3" Grid.Column="2" x:Name="RegisterBTN" Click="RegisterBTN_Click" Foreground="#FF96C0FB" Content="Registreren" Background="#FFE7F0FF" 
+            FontWeight="Bold" 
+            HorizontalAlignment="Center" 
+            BorderThickness="1,1,1,1" Height="111" Width="180"
+             FontSize="22">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Button.Effect>
+        </Button>
 
         <Button Grid.Row="5" Grid.Column="2" x:Name="CrudBTN" Click="CrudBTN_Click" Foreground="#FF96C0FB" Content="Data Window" Background="#FFE7F0FF" 
             FontWeight="Bold" 

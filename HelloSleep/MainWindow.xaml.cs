@@ -24,12 +24,14 @@ namespace HelloSleep
     public partial class MainWindow : Window
     {
         List<Data> dataList = new();
+        List<UserData> userlist = new();
 
         public MainWindow()
         {
             InitializeComponent();
 
             GetDBdata.GetData(dataList);
+
 
             
         }
@@ -67,13 +69,13 @@ namespace HelloSleep
 
         private void CrudBTN_Click(object sender, RoutedEventArgs e)
         {
-            CRUDWindow CRUDWindow = new CRUDWindow();
+            CRUDWindow CRUDWindow = new CRUDWindow(dataList, userlist);
             CRUDWindow.Show();
         }
 
         private void AccountBtn_Click(object sender, RoutedEventArgs e)
         {
-            AccountWindow AccountWindow = new AccountWindow();
+            AccountWindow AccountWindow = new AccountWindow(dataList, userlist);
             AccountWindow.Show();
         }
     }

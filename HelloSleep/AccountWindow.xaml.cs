@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HelloSleep.Models;
 
 namespace HelloSleep
 {
@@ -19,15 +20,25 @@ namespace HelloSleep
     /// </summary>
     public partial class AccountWindow : Window
     {
-        public AccountWindow()
+        List<Data> listTest = new List<Data>();
+        List<UserData> userData = new List<UserData>();
+        public AccountWindow(List<Data> TestList, List<UserData> UserData)
         {
             InitializeComponent();
+            listTest = TestList;
+            userData = UserData;
         }
 
         private void CrudBTN_Click(object sender, RoutedEventArgs e)
         {
-            CRUDWindow CRUDWindow= new CRUDWindow();
+            CRUDWindow CRUDWindow= new CRUDWindow(listTest, userData);
             CRUDWindow.Show();
+        }
+
+        private void RegisterBTN_Click(object sender, RoutedEventArgs e)
+        {
+            Registration Registration= new Registration();
+            Registration.Show();
         }
     }
 }

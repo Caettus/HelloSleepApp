@@ -23,5 +23,10 @@ namespace HelloSleep
         {
             InitializeComponent();
         }
+
+        private void AccountAanmakenBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

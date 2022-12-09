@@ -24,7 +24,7 @@
             
         </DataGrid>
 
-        <TextBox x:Name="TextBoxCRUD"></TextBox>
+        
 
         <Button x:Name="UserDataBn" 
                 Click="UserDataBn_Click" 

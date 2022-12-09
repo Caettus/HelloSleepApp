@@ -37,8 +37,9 @@
                 Grid.Column="1"
                 Grid.ColumnSpan="3"
                 Grid.Row="1"
-                VerticalAlignment="Top">
-            <Image Source="/HelloSleep_Logo.jpeg" Stretch="UniformToFill">
+                VerticalAlignment="Top"
+                BorderThickness="0">
+            <Image Source="Images/logoHelloSleep.png" Stretch="UniformToFill">
             </Image>
         </Button>
 

@@ -10,8 +10,11 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="40"/>
+            
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -22,13 +25,13 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="120"/>
             <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
 
-        <Rectangle x:Name="BackgroundRec" Fill="#e7f0ff" Grid.Column="1" Grid.Row="4" Grid.RowSpan="6" RadiusX="10" RadiusY="10" Stroke="#99b7e8" StrokeThickness="1.5">
+        <Rectangle x:Name="BackgroundRec" Fill="#e7f0ff" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Grid.RowSpan="7" RadiusX="10" RadiusY="10" Stroke="#99b7e8" StrokeThickness="1.5">
             <Rectangle.Effect>
                 <DropShadowEffect
                     ShadowDepth="4"
@@ -43,16 +46,62 @@
                 x:Name="LogoBtn"  
                 Background="#F3F7FE"
                 Height="101" Width="310" 
-                Grid.Column="1"
+                Grid.Column="2"
                 Grid.Row="1"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Center" 
-                BorderThickness="0"
-                >
+                BorderThickness="0">
+
 
             <Image Source="/Images/logoHelloSleep.png" Stretch="UniformToFill">
             </Image>
         </Button>
+
+        <TextBlock x:Name="txtblockRegistreren" Text="Maak een nieuw account aan" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" ></TextBlock>
+
+        <DockPanel Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" >
+            <TextBlock x:Name="txtblockFirstName" Text="Voornaam:" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"></TextBlock>
+            <TextBox x:Name="txtboxFirstName" Width="375" FontSize="22" HorizontalAlignment="Right"></TextBox>
+        </DockPanel>
+        <DockPanel Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" >
+            <TextBlock x:Name="txtblockLastName" Text="Achternaam:" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"></TextBlock>
+            <TextBox x:Name="txtboxLastName" Width="375" FontSize="22" HorizontalAlignment="Right"></TextBox>
+        </DockPanel>
+        <DockPanel Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" >
+            <TextBlock x:Name="txtblockEmail" Text="Email Adres:" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"></TextBlock>
+            <TextBox x:Name="txtboxEmail" Width="375" FontSize="22" HorizontalAlignment="Right"></TextBox>
+        </DockPanel>
+        <DockPanel Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" >
+            <TextBlock x:Name="txtblockPassword" Text="Wachtwoord:" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"></TextBlock>
+            <PasswordBox x:Name="PassWordBox" Width="375" FontSize="22" HorizontalAlignment="Right"></PasswordBox>
+        </DockPanel>
+        <DockPanel Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" >
+            <TextBlock x:Name="txtblockConfirmPassword" Text="Wachtwoord bevestigen:" Foreground="#FF96C0FB" FontWeight="Bold" FontSize="22"></TextBlock>
+            <PasswordBox x:Name="ConfirmPassWordBox" Width="375" FontSize="22" HorizontalAlignment="Right"></PasswordBox>
+        </DockPanel>
+
+        <Button Grid.Row="8" Grid.Column="2" x:Name="AccountAanmakenBTN" Click="AccountAanmakenBTN_Click" Foreground="#FF96C0FB" Content="Account Aanmaken" Background="#FFE7F0FF" 
+            FontWeight="Bold" 
+            HorizontalAlignment="Center" 
+            BorderThickness="1,1,1,1" Width="250" Height="90"
+             FontSize="22">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Button.Effect>
+        </Button>
+
 
 
     </Grid>
