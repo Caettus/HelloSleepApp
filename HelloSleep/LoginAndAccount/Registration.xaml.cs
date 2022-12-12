@@ -26,7 +26,8 @@ namespace HelloSleep
 
         private void AccountAanmakenBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            db.Execute("INSERT INTO `users` (`id`, `names`, `username`, `password`) VALUES (NULL, '" + txtboxFirstName.Text + "', '" + textBox1.Text + "', '" + textBox2.Text + "');");
+            this.Close();
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloSleep"
         mc:Ignorable="d"
-        Title="CRUDWindow" Height="870" Width="762"
+        Title="CRUDWindow" Height="770" Width="662"
         Background="#F3F7FE">
     <Grid>
         <Grid.ColumnDefinitions>

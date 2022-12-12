@@ -48,18 +48,17 @@ namespace HelloSleep
             while (read.Read())
             {
                 UserData dataClass = new();
-                dataClass.Id = (int)read["id"];
+                //dataClass.Id = (int)read["id"];
                 dataClass.Name = read["name"].ToString();
                 dataClass.Email = (string)read["email"];
-                dataClass.EmailVerifiedAt = (string)read["email_verified_at"];
+                //dataClass.EmailVerifiedAt = (string)read["email_verified_at"];
                 dataClass.Password = (string)read["password"];
-                dataClass.RememberToken = (string)read["remember_token"];
-                dataClass.CreatedAt = (string)read["created_at"];
-                dataClass.UpdatedAt = (string)read["updated_at"];
-                dataClass.admin = (string)read["admin"];
-                BabyDataGrid.Items.Add(dataClass);
-
-                Userdatalist.Add(dataClass);
+                //dataClass.RememberToken = (string)read["remember_token"];
+                //dataClass.CreatedAt = (string)read["created_at"];
+                //dataClass.UpdatedAt = (string)read["updated_at"];
+                //dataClass.admin = (string)read["admin"];
+                Userdatalist.Add(dataClass);                
+                
 
 
             }

@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloSleep"
         mc:Ignorable="d"
-        Title="MainWindow" Height="870" Width="762"
+        Title="MainWindow" Height="770" Width="630"
         Background="#F3F7FE"
         >
 
 
     <Grid >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -43,22 +43,11 @@
             </Image>
         </Button>
 
-       <!--
-        <Image 
-                x:Name="Logo" 
-                Source="/HelloSleep_Logo.jpeg" 
-                RenderTransformOrigin="0.295,-2.325" 
-                Height="101" Width="310" 
-                Grid.Column="1"
-                Grid.ColumnSpan="3"
-                Grid.Row="1"
-                VerticalAlignment="Top"
-                />
-        --> 
+
 
         <Button x:Name="LiveFeedBtn" 
                 Click="LiveFeedBtn_Click" 
-                Width="195" Height="111"
+                Width="180" Height="100"
                 Content="Resultaten" 
                 RenderTransformOrigin="0.295,0.541" 
                 Foreground="#FF96C0FB" Background="#FFE7F0FF" 
@@ -90,13 +79,12 @@
         </Button>
         <Button 
             x:Name="DataBtn" 
-            Click="DataBtn_Click" 
-            Width="180" 
+            Click="DataBtn_Click"  
             Content="Data weergeven" 
             Foreground="#FF96C0FB" Background="#FFE7F0FF" 
             FontWeight="Bold" 
             HorizontalAlignment="Center" 
-            BorderThickness="1,1,1,1" Height="111" 
+            BorderThickness="1,1,1,1" Width="180" Height="100" 
             Grid.Column="3"
             Grid.Row="3" FontSize="22">
 
@@ -118,12 +106,12 @@
 
         </Button>
 
-        <Button x:Name="WekkerBtn" Click="WekkerBtn_Click"  Width="180" 
+        <Button x:Name="WekkerBtn" Click="WekkerBtn_Click"  
             Content="Wekker" 
             Foreground="#FF96C0FB" Background="#FFE7F0FF" 
             FontWeight="Bold" 
             HorizontalAlignment="Center" 
-            BorderThickness="1,1,1,1" Height="111" 
+            BorderThickness="1,1,1,1" Width="180" Height="100"
             Grid.Column="1"
             Grid.Row="5" FontSize="22">
 
@@ -144,12 +132,12 @@
 
         </Button>
 
-        <Button x:Name="MuziekBtn" Click="MuziekBtn_Click"  Width="180" 
+        <Button x:Name="MuziekBtn" Click="MuziekBtn_Click"  
             Content="Muziek" 
             Foreground="#FF96C0FB" Background="#FFE7F0FF" 
             FontWeight="Bold" 
             HorizontalAlignment="Center" 
-            BorderThickness="1,1,1,1" Height="111" 
+            BorderThickness="1,1,1,1" Width="180" Height="100"
             Grid.Column="3"
             Grid.Row="5" FontSize="22">
 
@@ -171,12 +159,12 @@
         </Button>
 
         
-        <Button x:Name="AccountBtn" Click="AccountBtn_Click"  Width="180" 
+        <Button x:Name="AccountBtn" Click="AccountBtn_Click" 
             Content="Account" 
             Foreground="#FF96C0FB" Background="#FFE7F0FF" 
             FontWeight="Bold" 
             HorizontalAlignment="Center" 
-            BorderThickness="1,1,1,1" Height="111" 
+            BorderThickness="1,1,1,1" Width="180" Height="100" 
             Grid.Column="2"
             Grid.Row="2" FontSize="22">
 
