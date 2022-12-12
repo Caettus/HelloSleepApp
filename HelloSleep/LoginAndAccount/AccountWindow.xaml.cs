@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HelloSleep.LoginAndAccount;
 using HelloSleep.Models;
+using Org.BouncyCastle.Asn1.Cmp;
 
 namespace HelloSleep
 {
@@ -37,8 +39,14 @@ namespace HelloSleep
 
         private void RegisterBTN_Click(object sender, RoutedEventArgs e)
         {
-            Registration Registration= new Registration();
+            Registration Registration= new Registration(userData);
             Registration.Show();
+        }
+
+        private void InloggenBTN_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow(userData);
+            loginWindow.Show();
         }
     }
 }

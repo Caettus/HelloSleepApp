@@ -11,25 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using HelloSleep.Models;
 
-namespace HelloSleep
+namespace HelloSleep.LoginAndAccount
 {
     /// <summary>
-    /// Interaction logic for Registration.xaml
+    /// Interaction logic for itwork.xaml
     /// </summary>
-    public partial class Registration : Window
+    public partial class itwork : Window
     {
-        List<UserData> UserRegistration = new List<UserData>();
-        public Registration(List<UserData> userRegistration)
+        public itwork()
         {
             InitializeComponent();
-            UserRegistration = userRegistration;
-        }
-
-        private void AccountAanmakenBTN_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

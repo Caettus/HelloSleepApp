@@ -71,6 +71,28 @@
             </Button.Effect>
         </Button>
 
+        <Button Grid.Row="2" Grid.Column="2" x:Name="InloggenBTN" Click="InloggenBTN_Click" Foreground="#FF96C0FB" Content="Log In" Background="#FFE7F0FF" 
+            FontWeight="Bold" 
+            HorizontalAlignment="Center" 
+            BorderThickness="1,1,1,1" Width="180" Height="100"
+             FontSize="22">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+
+            <Button.Effect>
+                <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="330"
+                    Color="Black"
+                    Opacity="0.5"
+                    BlurRadius="4"/>
+            </Button.Effect>
+        </Button>
+
         <Button Grid.Row="5" Grid.Column="2" x:Name="CrudBTN" Click="CrudBTN_Click" Foreground="#FF96C0FB" Content="Data Window" Background="#FFE7F0FF" 
             FontWeight="Bold" 
             HorizontalAlignment="Center" 
