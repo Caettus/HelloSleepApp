@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HelloSleep.Models;
+using MySql.Data.MySqlClient;
 
 namespace HelloSleep
 {
@@ -29,6 +30,21 @@ namespace HelloSleep
 
         private void AccountAanmakenBTN_Click(object sender, RoutedEventArgs e)
         {
+            string dbstring = "Server=127.0.0.1;Database=hellosleep;Uid=root;Pwd=;";
+
+            MySqlConnection db = new MySqlConnection(dbstring);
+            db.Open();
+            MySqlCommand com = new MySqlCommand("SELECT * from users", db);
+            
+
+            MySqlDataReader read = com.ExecuteReader();
+            string query = $"insert into users values('{txtboxFirstName.Text}','{txtboxEmail.Text}','{PassWordBox.Password}')";
+            com.CommandText = query;
+            
+            
+            
+            db.Close();
+            
 
         }
     }

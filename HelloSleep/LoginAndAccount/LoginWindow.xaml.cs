@@ -33,7 +33,15 @@ namespace HelloSleep.LoginAndAccount
         {
             string dbstring = "Server=127.0.0.1;Database=hellosleep;Uid=root;Pwd=;";
             MySqlConnection db = new MySqlConnection(dbstring);
+
+            db.Open();
+         
+            MySqlCommand com = new MySqlCommand($"SELECT * FROM users WHERE email = {txtboxEmail}", db);
+            com.ExecuteScalar();
             
+
+            
+
             //try
             //{
             //    db.Open();
