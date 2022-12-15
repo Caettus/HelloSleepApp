@@ -35,34 +35,26 @@ namespace HelloSleep.LoginAndAccount
             MySqlConnection db = new MySqlConnection(dbstring);
 
             db.Open();
-         
-            MySqlCommand com = new MySqlCommand($"SELECT * FROM users WHERE email = {txtboxEmail}", db);
-            com.ExecuteScalar();
+
+            //eerst selecteert je ALLES van de database zodat de if statement de juiste data kan pakken.
+            MySqlCommand com = new MySqlCommand("SELECT * FROM users", db);
             
-
+            //op deze manier heb je een read functie.
+            MySqlDataReader read = com.ExecuteReader();
             
-
-            //try
-            //{
-            //    db.Open();
-            //    string stm = "select email,password from users WHERE email = @Email AND password =@Password";
-            //    var cmd = new MySqlCommand(stm, db);
-
-            //    cmd.Parameters.AddWithValue("@Name", txtboxEmail.Text);
-            //    cmd.Parameters.AddWithValue("@Password", txtblockPassword.Text);
-            //    cmd.ExecuteReader();
-            //}
-            //catch(Exception ex) { Console.WriteLine("Login failed"); }
-            //db.Close();
+            //de Read functie leest maar 1 regel, dus het moet door een while loop want zolang er regels zijn in de database moet die
+            //blijven doorlezen om te kijken of de text binnen txtboxEmail overeenkomt met een regel in de database.
+            //alle andere manieren werken niet (op de een of andere manier), dus doe dit.
+            while (read.Read())
+            {
+                if ((string)read["email"] == txtboxEmail.Text)
+                {
+                    MessageBox.Show("Het werkt");
+                }
+            }
+            
+            db.Close();
         }
-
-        //private void itwork()
-        //{
-        //    this.Hide();
-        //    itwork frm = new itwork();
-        //    frm.Show();
-        //    this.Close();
-        //}
 
     }
 }

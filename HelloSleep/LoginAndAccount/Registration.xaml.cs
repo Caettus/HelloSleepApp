@@ -30,19 +30,24 @@ namespace HelloSleep
 
         private void AccountAanmakenBTN_Click(object sender, RoutedEventArgs e)
         {
-            string dbstring = "Server=127.0.0.1;Database=hellosleep;Uid=root;Pwd=;";
+            string dbstring = "Server=127.0.0.1;Database=hellosleep;Uid=root;Pwd=;"
+            
+                using (MySqlConnection db = new MySqlConnection(dbstring))
+                {
+                    db.Open();
+                }
 
-            MySqlConnection db = new MySqlConnection(dbstring);
-            db.Open();
+            
+
+                
+            
             MySqlCommand com = new MySqlCommand("SELECT * from users", db);
-            
 
-            MySqlDataReader read = com.ExecuteReader();
-            string query = $"insert into users values('{txtboxFirstName.Text}','{txtboxEmail.Text}','{PassWordBox.Password}')";
-            com.CommandText = query;
-            
-            
-            
+
+            ///////TEST vOOR HASH\
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword($"{PassWordBox.Password}");
+            MySqlCommand testcom = new MySqlCommand($"INSERT INTO (users) (name,email,password) VALUES ('{txtboxFirstName},{txtboxEmail},{passwordHash}')");
+            testcom.ExecuteNonQuery();
             db.Close();
             
 
