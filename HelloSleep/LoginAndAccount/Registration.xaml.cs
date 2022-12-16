@@ -30,26 +30,51 @@ namespace HelloSleep
 
         private void AccountAanmakenBTN_Click(object sender, RoutedEventArgs e)
         {
-            string dbstring = "Server=127.0.0.1;Database=hellosleep;Uid=root;Pwd=;"
-            
+            try
+            {
+                string dbstring = "Server=127.0.0.1;Database=hellosleep;Uid=root;Pwd=;";
+                string pwdToHash = PassWordBox.Password;
+                string hashToStoreInDatabase = BCrypt.Net.BCrypt.HashPassword(pwdToHash, BCrypt.Net.BCrypt.GenerateSalt());
+
                 using (MySqlConnection db = new MySqlConnection(dbstring))
                 {
                     db.Open();
+                    
+                    MySqlCommand cmd = new MySqlCommand($"INSERT INTO users (name,email,password) VALUES (@Name,@Email,@Password)", db);
+
+                    cmd.Parameters.Add(new MySqlParameter("@Name", MySqlDbType.VarChar));
+                    cmd.Parameters.Add(new MySqlParameter("@Email", MySqlDbType.VarChar));
+                    cmd.Parameters.Add(new MySqlParameter("@Password", MySqlDbType.VarChar));
+                    //cmd.Parameters.Add("@Name", MySqlDbType.VarChar);
+                    //cmd.Parameters.Add("@Email", MySqlDbType.VarChar);
+                    //cmd.Parameters.Add("@Name", MySqlDbType.VarChar);
+                    cmd.Parameters["@Name"].Value = (txtboxFirstName.Text);
+                    cmd.Parameters["@Email"].Value = txtboxEmail.Text;
+                    cmd.Parameters["@Password"].Value = hashToStoreInDatabase;
+
+                    cmd.ExecuteNonQuery();
+
+                    db.Close();
+
+                   
+                    
+                    
+                    //string passwordHash = BCrypt.Net.BCrypt.HashPassword($"{PassWordBox.Password}");
+                    
+                    //MySqlCommand testcom = new MySqlCommand($"INSERT INTO (users) (name,email,password) VALUES ('{txtboxFirstName},{txtboxEmail},{passwordHash}')");
+                    
+                    //testcom.ExecuteNonQuery();
+                    
+                    //db.Close();
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}");
+            }
+            
             
 
-                
-            
-            MySqlCommand com = new MySqlCommand("SELECT * from users", db);
-
-
-            ///////TEST vOOR HASH\
-            string passwordHash = BCrypt.Net.BCrypt.HashPassword($"{PassWordBox.Password}");
-            MySqlCommand testcom = new MySqlCommand($"INSERT INTO (users) (name,email,password) VALUES ('{txtboxFirstName},{txtboxEmail},{passwordHash}')");
-            testcom.ExecuteNonQuery();
-            db.Close();
-            
 
         }
     }
